@@ -1,0 +1,14 @@
+{
+  "eelixir": {
+    "extends": "html",
+    "snippets": {
+      "eex": "<%= | %>\n\t${child}<% end %>"
+    }
+  },
+  "eruby": {
+    "extends": "html",
+    "snippets": {
+      "erb": "<%= | %>\n\t${child}<% end %>"
+    }
+  }
+}

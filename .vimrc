@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
 " My Bundles here:
 Plug 'mileszs/ack.vim'
 Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -51,6 +52,9 @@ filetype plugin indent on     " required!
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" Load custom-snippets for Emmet
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/autoload/emmet-snippets.json')), "\n"))
  
 
 "common conf {{                 通用配置
