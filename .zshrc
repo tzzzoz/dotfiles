@@ -98,3 +98,5 @@ export NVM_DIR="/Users/baicheng/.nvm"
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+eval "$(pyenv init -)"

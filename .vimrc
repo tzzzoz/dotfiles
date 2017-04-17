@@ -19,6 +19,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'neomake/neomake'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "Plugins for Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -46,6 +48,10 @@ colorscheme gruvbox
 
 filetype plugin indent on     " required!
  " End of vim-plug configuration
+
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+ 
 
 "common conf {{                 通用配置
 set ai                          "自动缩进
