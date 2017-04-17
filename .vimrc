@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " My Bundles here:
 Plug 'mileszs/ack.vim'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['eelixir', 'eruby', 'html'] }
 Plug 'mattn/webapi-vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
