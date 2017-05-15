@@ -2,13 +2,13 @@
   "eelixir": {
     "extends": "html",
     "snippets": {
-      "eex": "<%= | %>\n\t${child}<% end %>"
+      "eex": "<%= | %>\n"
     }
   },
   "eruby": {
     "extends": "html",
     "snippets": {
-      "erb": "<%= | %>\n\t${child}<% end %>"
+      "erb": "<%= | %>\n"
     }
   }
 }
