@@ -100,3 +100,5 @@ export NVM_DIR="/Users/baicheng/.nvm"
 . $HOME/.asdf/completions/asdf.bash
 
 eval "$(pyenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

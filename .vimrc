@@ -6,12 +6,19 @@ filetype off  " required!
 call plug#begin('~/.config/nvim/plugged')
 
 " My Bundles here:
+" Utils
 Plug 'mileszs/ack.vim'
 Plug 'mattn/emmet-vim', { 'for': ['eelixir', 'eruby', 'html'] }
 Plug 'mattn/webapi-vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Editing
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
@@ -20,17 +27,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'neomake/neomake'
+Plug 'alvan/vim-closetag'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'aliou/sql-heredoc.vim'
 
 "Plugins for Elixir
 Plug 'elixir-lang/vim-elixir'
 
 "Plugins for ruby
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'startify'] }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'startify'] }
 Plug 'thoughtbot/vim-rspec'
 
 "colorscheme gruvbox
@@ -55,7 +64,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Load custom-snippets for Emmet
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/autoload/emmet-snippets.json')), "\n"))
- 
+" enable emmet just for html/css 
 
 "common conf {{                 通用配置
 set ai                          "自动缩进
@@ -79,6 +88,8 @@ set foldmethod=indent           "代码折叠
 set nofoldenable
 set clipboard=unnamed           "复制文本至系统的剪贴板
 set previewheight=20            "预览方法定义时分割窗口高度
+set backspace=2                 "settings for backspace
+set backspace=indent,eol,start
 "}}
 
 " conf for tabs, 为标签页进行的配置，通过ctrl h/l切换标签等
@@ -101,10 +112,6 @@ map <F5> bi%<Esc>ea%<Esc>      "'用一对百分号把一个单词括起来'映�
 set whichwrap=b,s,<,>,h,l,[,]   "指定可以换行的命令
 set wrap
 
-" enable emmet just for html/css
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,erb EmmetInstall
-
 " easytags: async tags
 let g:easytags_async = 1
 
@@ -116,13 +123,23 @@ let g:vim_markdown_toc_autofit = 1
 " highlight YAML front matter as used by Jekyll
 let g:vim_markdown_frontmatter = 1
 
+
+" set color theme
+set background=dark
+colorscheme gruvbox
+
 "conf for plugins {{ 插件相关的配置
 "状态栏的配置 
-"powerline{
-set guifont=PowerlineSymbols\ for\ Powerline
 set nocompatible
 set t_Co=256
-let g:Powerline_symbols = 'fancy'
+"Powerline setting
+let g:airline_theme='solarized dark'
+
+"Set GUI font type
+"if has("gui_running")
+let g:airline_powerline_fonts = 1
+set guifont=Source\ Code\ Pro\ for\ Powerline\ :h18
+"endif
 "}
 
 "}}
